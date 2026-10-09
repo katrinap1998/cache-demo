@@ -66,3 +66,7 @@ terminal/                                      saved output quoted on the slides
 - The terminal slides quote line numbers from the test files, so edit those files in place and don't add or remove lines above the assertions.
 - `evictExpired` and `sweep` (Cleanup slides) are in `refactored/CacheService.scala` but no test covers them.
 - The current `terminal/` output was captured on 4 Oct 2026 with sbt 1.10.2 and Java 21. After changing any code, run `./run-scenarios.sh` again.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
