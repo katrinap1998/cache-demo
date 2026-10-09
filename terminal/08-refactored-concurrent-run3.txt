@@ -1,0 +1,10 @@
+$ sbt testOnly refactored.RefactoredConcurrentSuite
+[info] welcome to sbt 1.10.2 (Homebrew Java 21.0.2)
+[info] loading global plugins from /Users/katrina/.sbt/1.0/plugins
+[info] loading project definition from /Users/katrina/Downloads/cache-demo/project
+[info] loading settings for project root from build.sbt ...
+[info] set current project to cats-ref-cache-demo (in build file:/Users/katrina/Downloads/cache-demo/)
+refactored.RefactoredConcurrentSuite:
+  + concurrent misses compute once 0.314s
+[info] Passed: Total 1, Failed 0, Errors 0, Passed 1
+[success] Total time: 1 s, completed 4 Oct 2026, 16:32:28

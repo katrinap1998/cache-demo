@@ -1,0 +1,15 @@
+# sbt / Scala build output
+target/
+project/target/
+project/project/
+.bsp/
+
+# IDEs and editors
+.idea/
+.vscode/
+.metals/
+.bloop/
+metals.sbt
+
+# OS files
+.DS_Store

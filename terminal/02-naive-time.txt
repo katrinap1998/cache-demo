@@ -1,0 +1,32 @@
+$ sbt testOnly naive.NaiveTimeSuite
+[info] welcome to sbt 1.10.2 (Homebrew Java 21.0.2)
+[info] loading global plugins from /Users/katrina/.sbt/1.0/plugins
+[info] loading project definition from /Users/katrina/Downloads/cache-demo/project
+[info] loading settings for project root from build.sbt ...
+[info] set current project to cats-ref-cache-demo (in build file:/Users/katrina/Downloads/cache-demo/)
+naive.NaiveTimeSuite:
+==> X naive.NaiveTimeSuite.respects the TTL (FLAKY)  60.186s munit.FailException: /Users/katrina/Downloads/cache-demo/src/test/scala/naive/NaiveTimeSuite.scala:18 assertion failed
+17:      second <- CacheService.cacheResponse(Request("someId"))
+18:    } yield assert(first != second)
+19:  }
+    at munit.Assertions.fail(Assertions.scala:256)
+    at munit.Assertions.fail$(Assertions.scala:250)
+    at munit.FunSuite.fail(FunSuite.scala:11)
+    at munit.Assertions.$anonfun$assert$1(Assertions.scala:33)
+    at map @ naive.CacheService$.$anonfun$cacheResponse$4(CacheService.scala:20)
+    at get @ naive.CacheService$.$anonfun$cacheResponse$2(CacheService.scala:19)
+    at map @ naive.CacheService$.$anonfun$cacheResponse$2(CacheService.scala:19)
+    at flatMap @ naive.CacheService$.$anonfun$cacheResponse$2(CacheService.scala:19)
+    at apply @ naive.CacheService$.cacheResponse(CacheService.scala:18)
+    at flatMap @ naive.CacheService$.cacheResponse(CacheService.scala:18)
+    at map @ naive.NaiveTimeSuite.$anonfun$new$3(NaiveTimeSuite.scala:17)
+    at flatMap @ naive.NaiveTimeSuite.$anonfun$new$2(NaiveTimeSuite.scala:16)
+    at update @ naive.CacheService$.$anonfun$updateCache$4(CacheService.scala:31)
+    at map @ naive.CacheService$.$anonfun$updateCache$4(CacheService.scala:31)
+    at apply @ naive.CacheService$.computeResponse(CacheService.scala:35)
+    at map @ naive.CacheService$.$anonfun$updateCache$2(CacheService.scala:29)
+[error] Failed: Total 1, Failed 1, Errors 0, Passed 0
+[error] Failed tests:
+[error] 	naive.NaiveTimeSuite
+[error] (Test / testOnly) sbt.TestsFailedException: Tests unsuccessful
+[error] Total time: 61 s (01:01), completed 4 Oct 2026, 16:31:31

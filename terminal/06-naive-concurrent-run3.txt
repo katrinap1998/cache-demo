@@ -1,0 +1,25 @@
+$ sbt testOnly naive.NaiveConcurrentMissesSuite
+[info] welcome to sbt 1.10.2 (Homebrew Java 21.0.2)
+[info] loading global plugins from /Users/katrina/.sbt/1.0/plugins
+[info] loading project definition from /Users/katrina/Downloads/cache-demo/project
+[info] loading settings for project root from build.sbt ...
+[info] set current project to cats-ref-cache-demo (in build file:/Users/katrina/Downloads/cache-demo/)
+naive.NaiveConcurrentMissesSuite:
+==> X naive.NaiveConcurrentMissesSuite.concurrent misses compute once  0.301s munit.FailException: /Users/katrina/Downloads/cache-demo/src/test/scala/naive/NaiveConcurrentMissesSuite.scala:15 assertion failed
+14:      pair <- (call, call).parTupled
+15:    } yield assert(pair._1 == pair._2)
+16:  }
+    at munit.Assertions.fail(Assertions.scala:256)
+    at munit.Assertions.fail$(Assertions.scala:250)
+    at munit.FunSuite.fail(FunSuite.scala:11)
+    at munit.Assertions.$anonfun$assert$1(Assertions.scala:33)
+    at parTupled @ naive.NaiveConcurrentMissesSuite.$anonfun$new$1(NaiveConcurrentMissesSuite.scala:14)
+    at parTupled @ naive.NaiveConcurrentMissesSuite.$anonfun$new$1(NaiveConcurrentMissesSuite.scala:14)
+    at parTupled @ naive.NaiveConcurrentMissesSuite.$anonfun$new$1(NaiveConcurrentMissesSuite.scala:14)
+    at map @ naive.NaiveConcurrentMissesSuite.$anonfun$new$1(NaiveConcurrentMissesSuite.scala:14)
+    at flatMap @ munit.internal.NestingChecks$.checkNestingIO(internal.scala:38)
+[error] Failed: Total 1, Failed 1, Errors 0, Passed 0
+[error] Failed tests:
+[error] 	naive.NaiveConcurrentMissesSuite
+[error] (Test / testOnly) sbt.TestsFailedException: Tests unsuccessful
+[error] Total time: 1 s, completed 4 Oct 2026, 16:31:56
